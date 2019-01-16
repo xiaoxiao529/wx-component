@@ -1,0 +1,16 @@
+<!--pages/swiper/swiper.wxml-->
+<!-- <view >我是子组件  {{name}}</view> -->
+
+
+<swiper class='swiperWrap'
+  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+  interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"
+  indicator-color='#ccc' indicator-active-color='red' bindchange='change'
+  >
+  <block wx:for="{{imgUrls}}" wx:key="*this">
+    <swiper-item class='swiperItem'>
+      <!-- data里设置的current值等于图片当前索引，则添加active类 -->
+      <image class='img {{current===index?"active":""}}' src='{{item}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
